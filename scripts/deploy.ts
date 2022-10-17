@@ -10,6 +10,11 @@ async function main() {
   await deployed.deployed();
 
   console.log("contract deployed at:", deployed.address);
+
+  const contractAddress = deployed.address;
+  const result = await helpers.getStorageAt(contractAddress, 15);
+
+  console.log("here is the result:", result);
   
 }
 
